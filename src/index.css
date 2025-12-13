@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-none;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  body {
+    @apply bg-dark text-white font-sans;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+  }
+
+  /* Performance optimizations */
+  * {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+
+  /* Smooth scrolling optimization */
+  #root {
+    isolation: isolate;
+  }
+
+  /* GPU acceleration for animations */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+
+  /* Mobile Portrait Mode Optimizations */
+  @media (max-width: 768px) and (orientation: portrait) {
+    body {
+      font-size: 14px;
+    }
+
+    h1 {
+      font-size: 2.5rem !important;
+    }
+
+    h2 {
+      font-size: 1.75rem !important;
+    }
+
+    h3 {
+      font-size: 1.25rem !important;
+    }
+
+    section {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .max-w-7xl {
+      max-width: 100%;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
