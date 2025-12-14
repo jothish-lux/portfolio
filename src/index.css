@@ -77,3 +77,18 @@
     text-wrap: balance;
   }
 }
+
+* {
+  scroll-behavior: smooth;
+}
+
+html {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  will-change: scroll-position;
+}

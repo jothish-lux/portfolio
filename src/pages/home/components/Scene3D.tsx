@@ -8,18 +8,18 @@ function AnimatedSphere() {
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.2;
-      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.3;
+      meshRef.current.rotation.x = state.clock.getElapsedTime() * 0.1;
+      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.15;
     }
   });
 
   return (
-    <Sphere ref={meshRef} args={[1, 64, 64]} scale={2.5}>
+    <Sphere ref={meshRef} args={[1, 32, 32]} scale={2.5}>
       <MeshDistortMaterial
         color="#FF6B35"
         attach="material"
-        distort={0.3}
-        speed={1.5}
+        distort={0.2}
+        speed={1}
         roughness={0.2}
         metalness={0.8}
       />
@@ -31,9 +31,16 @@ export default function Scene3D() {
   return (
     <Canvas 
       camera={{ position: [0, 0, 5], fov: 45 }}
-      dpr={[1, 1.5]}
+      dpr={[1, 1]}
       performance={{ min: 0.5 }}
-      gl={{ antialias: false, powerPreference: 'high-performance' }}
+      gl={{ 
+        antialias: false, 
+        powerPreference: 'high-performance',
+        alpha: true,
+        stencil: false,
+        depth: false
+      }}
+      frameloop="demand"
     >
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
@@ -43,7 +50,7 @@ export default function Scene3D() {
         enableZoom={false} 
         enablePan={false} 
         autoRotate 
-        autoRotateSpeed={0.5}
+        autoRotateSpeed={0.3}
         enableDamping={false}
       />
     </Canvas>

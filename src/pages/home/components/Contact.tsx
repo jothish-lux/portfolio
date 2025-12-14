@@ -112,7 +112,7 @@ const Contact = () => {
               <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
               <div className="flex gap-4">
                 <a
-                  href="https://www.linkedin.com/in/jyothish-kumar-a9b221258/"
+                  href="https://www.linkedin.com/in/jyothish-kumar-330aaa394"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 hover:border-orange-500 hover:bg-orange-500 transition-all group"
@@ -120,7 +120,7 @@ const Contact = () => {
                   <i className="ri-linkedin-fill text-xl text-slate-300 group-hover:text-white"></i>
                 </a>
                 <a
-                  href="https://github.com/jyothishkumar-dev"
+                  href="https://github.com/jothish-lux"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 hover:border-orange-500 hover:bg-orange-500 transition-all group"

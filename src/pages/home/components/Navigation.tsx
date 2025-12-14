@@ -15,24 +15,34 @@ export default function Navigation() {
   ];
 
   useEffect(() => {
+    let ticking = false;
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
 
-      const sections = navItems.map((item) => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 200;
+          const sections = navItems.map((item) => document.getElementById(item.id));
+          const scrollPosition = window.scrollY + 200;
 
-      sections.forEach((section, index) => {
-        if (section) {
-          const top = section.offsetTop;
-          const bottom = top + section.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < bottom) {
-            setActiveSection(navItems[index].id);
-          }
-        }
-      });
+          sections.forEach((section, index) => {
+            if (section) {
+              const top = section.offsetTop;
+              const bottom = top + section.offsetHeight;
+              if (scrollPosition >= top && scrollPosition < bottom) {
+                setActiveSection(navItems[index].id);
+              }
+            }
+          });
+          
+          ticking = false;
+        });
+        
+        ticking = true;
+      }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

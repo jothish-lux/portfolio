@@ -19,9 +19,9 @@ export default function Loader({ onLoadComplete }: LoaderProps) {
           }, 100);
           return 100;
         }
-        return prev + 10;
+        return prev + 4;
       });
-    }, 15);
+    }, 100);
 
     return () => clearInterval(interval);
   }, [onLoadComplete]);
