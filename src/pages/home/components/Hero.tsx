@@ -4,12 +4,12 @@ import gsap from 'gsap';
 
 export default function Hero() {
   const textRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
     if (textRef.current) {
       const letters = textRef.current.querySelectorAll('.letter');
+
       gsap.from(letters, {
         opacity: 0,
         y: 50,
@@ -30,9 +30,76 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-visible">
-      <div className="absolute inset-0 bg-gradient-to-b from-dark/50 via-dark/30 to-dark z-10 pointer-events-none"></div>
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-950 to-black -z-30" />
 
+      {/* Main Orange Glow */}
+      <motion.div
+        animate={{
+          x: [-30, 30, -30],
+          y: [-20, 20, -20],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+        className="absolute -top-40 left-1/2 h-[500px] w-[500px]
+        -translate-x-1/2 rounded-full bg-[#FF6B35]/20 blur-[180px] -z-20"
+      />
+
+      {/* Secondary Glow */}
+      <motion.div
+        animate={{
+          x: [20, -20, 20],
+          y: [10, -10, 10],
+        }}
+        transition={{
+          duration: 16,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+        className="absolute bottom-0 right-0 h-[400px] w-[400px]
+        rounded-full bg-orange-500/10 blur-[160px] -z-20"
+      />
+
+      {/* Grid */}
+      <div
+        className="absolute inset-0 opacity-[0.04] -z-10"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,107,53,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,107,53,0.3) 1px, transparent 1px)',
+          backgroundSize: '50px 50px',
+        }}
+      />
+
+      {/* Particles */}
+      <div className="absolute inset-0 overflow-hidden -z-10">
+        {[...Array(25)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{
+              y: [-20, 20, -20],
+              opacity: [0.2, 0.8, 0.2],
+            }}
+            transition={{
+              duration: 4 + Math.random() * 4,
+              repeat: Infinity,
+            }}
+            className="absolute h-1 w-1 rounded-full bg-[#FF6B35]/60"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -53,6 +120,7 @@ export default function Hero() {
               </span>
             ))}
           </h1>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,6 +130,7 @@ export default function Hero() {
             <p className="text-xl md:text-2xl text-white/80 font-display portrait:text-lg">
               Financial Head <span className="text-[#FF6B35]">&</span> Designer
             </p>
+
             <p className="text-lg md:text-xl text-white/60 portrait:text-base">
               Creative Developer based in Warsaw, Poland
             </p>
@@ -80,6 +149,7 @@ export default function Hero() {
           >
             Let's Work Together
           </button>
+
           <a
             href="mailto:myselfjyothish@gmail.com"
             className="px-8 py-4 border-2 border-white/20 rounded-full font-medium hover:bg-white/10 transition-all cursor-pointer whitespace-nowrap portrait:w-full portrait:max-w-xs portrait:py-3 portrait:text-sm"
@@ -97,41 +167,40 @@ export default function Hero() {
           <a
             href="tel:+48789795508"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FF6B35] transition-all cursor-pointer portrait:w-10 portrait:h-10"
-            title="Phone"
           >
             <i className="ri-phone-line text-xl portrait:text-lg"></i>
           </a>
+
           <a
             href="mailto:myselfjyothish@gmail.com"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FF6B35] transition-all cursor-pointer portrait:w-10 portrait:h-10"
-            title="Email"
           >
             <i className="ri-mail-line text-xl portrait:text-lg"></i>
           </a>
+
           <a
             href="https://www.linkedin.com/in/jyothishkumar-aruparathara-suresh-330aaa394/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FF6B35] transition-all cursor-pointer portrait:w-10 portrait:h-10"
-            title="LinkedIn"
           >
             <i className="ri-linkedin-fill text-xl portrait:text-lg"></i>
           </a>
+
           <a
             href="https://github.com/jothish-lux"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FF6B35] transition-all cursor-pointer portrait:w-10 portrait:h-10"
-            title="GitHub"
           >
             <i className="ri-github-fill text-xl portrait:text-lg"></i>
           </a>
+
           <a
             href="https://www.instagram.com/j0thish/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FF6B35] transition-all cursor-pointer portrait:w-10 portrait:h-10"
-            title="Instagram"
           >
             <i className="ri-instagram-fill text-xl portrait:text-lg"></i>
           </a>
@@ -141,7 +210,12 @@ export default function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 4, repeat: Infinity, repeatType: 'reverse' }}
+        transition={{
+          duration: 1,
+          delay: 4,
+          repeat: Infinity,
+          repeatType: 'reverse',
+        }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 portrait:bottom-4"
       >
         <i className="ri-arrow-down-line text-2xl text-white/50 portrait:text-xl"></i>
