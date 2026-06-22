@@ -121,7 +121,14 @@ export default function Hero() {
           >
             Let's Work Together
           </button>
-
+<a
+  href="/cv/Jyothish_CV.pdf"
+  download
+  className="px-8 py-4 border-2 border-[#FF6B35]/30 rounded-full font-medium hover:bg-[#FF6B35]/10 transition-all hover:scale-105 cursor-pointer whitespace-nowrap portrait:w-full portrait:max-w-xs portrait:py-3 portrait:text-sm"
+>
+  <i className="ri-download-line mr-2"></i>
+  Download CV
+</a>
           <a
             href="mailto:myselfjyothish@gmail.com"
             className="px-8 py-4 border-2 border-white/20 rounded-full font-medium hover:bg-white/10 transition-all cursor-pointer whitespace-nowrap portrait:w-full portrait:max-w-xs portrait:py-3 portrait:text-sm"
