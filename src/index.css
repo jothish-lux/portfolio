@@ -18,9 +18,12 @@
   body {
     @apply bg-dark text-white font-sans;
     overflow-x: hidden;
-    overscroll-behavior: none;
-  }
+    }
 
+html,
+body {
+  height: auto;
+}
   /* Performance optimizations - scoped, not global */
   .gpu-boost {
     -webkit-backface-visibility: hidden;

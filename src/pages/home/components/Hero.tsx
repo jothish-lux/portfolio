@@ -30,7 +30,7 @@ export default function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-visible">
       <div className="absolute inset-0 bg-gradient-to-b from-dark/50 via-dark/30 to-dark z-10 pointer-events-none"></div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 text-center">
@@ -95,7 +95,7 @@ export default function Hero() {
           className="mt-16 flex items-center justify-center gap-6 portrait:mt-8 portrait:gap-4"
         >
           <a
-            href="tel:+48578972631"
+            href="tel:+48789795508"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FF6B35] transition-all cursor-pointer portrait:w-10 portrait:h-10"
             title="Phone"
           >
@@ -109,7 +109,7 @@ export default function Hero() {
             <i className="ri-mail-line text-xl portrait:text-lg"></i>
           </a>
           <a
-            href="https://www.linkedin.com/in/jyothish-kumar-330aaa394"
+            href="https://www.linkedin.com/in/jyothishkumar-aruparathara-suresh-330aaa394/"
             target="_blank"
             rel="noopener noreferrer"
             className="w-12 h-12 flex items-center justify-center rounded-full bg-white/10 hover:bg-[#FF6B35] transition-all cursor-pointer portrait:w-10 portrait:h-10"
