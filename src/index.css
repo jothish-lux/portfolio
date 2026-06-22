@@ -21,8 +21,8 @@
     overscroll-behavior: none;
   }
 
-  /* Performance optimizations */
-  * {
+  /* Performance optimizations - scoped, not global */
+  .gpu-boost {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-perspective: 1000;
@@ -90,5 +90,4 @@ html {
 
 body {
   overflow-x: hidden;
-  will-change: scroll-position;
 }
