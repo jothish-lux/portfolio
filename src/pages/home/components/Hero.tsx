@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
-import Scene3D from './Scene3D';
 
 export default function Hero() {
   const textRef = useRef<HTMLDivElement>(null);
@@ -32,10 +31,6 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <Scene3D />
-      </div>
-
       <div className="absolute inset-0 bg-gradient-to-b from-dark/50 via-dark/30 to-dark z-10 pointer-events-none"></div>
 
       <div className="relative z-20 max-w-7xl mx-auto px-6 text-center">
