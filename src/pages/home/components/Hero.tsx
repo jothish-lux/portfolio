@@ -124,7 +124,7 @@ export default function Hero() {
 <a
   href="/cv/Jyothish_CV.pdf"
   download
-  className="px-8 py-4 border-2 border-[#FF6B35]/30 rounded-full font-medium hover:bg-[#FF6B35]/10 transition-all hover:scale-105 cursor-pointer whitespace-nowrap portrait:w-full portrait:max-w-xs portrait:py-3 portrait:text-sm"
+  className="px-8 py-4 bg-gradient-to-r from-[#FF6B35] to-[#F7931E] rounded-full font-medium hover:shadow-2xl hover:shadow-[#FF6B35]/50 transition-all hover:scale-105 cursor-pointer whitespace-nowrap portrait:w-full portrait:max-w-xs portrait:py-3 portrait:text-sm"
 >
   <i className="ri-download-line mr-2"></i>
   Get My CV
