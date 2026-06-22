@@ -34,49 +34,43 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-950 to-black -z-30" />
+      {/* Background container */}
+<div className="absolute inset-0 overflow-hidden">
+  {/* Base gradient */}
+  <div className="absolute inset-0 bg-gradient-to-br from-black via-zinc-950 to-black" />
 
-      {/* Main Orange Glow */}
-      <motion.div
-        animate={{
-          x: [-30, 30, -30],
-          y: [-20, 20, -20],
-        }}
-        transition={{
-          duration: 12,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-        className="absolute -top-40 left-1/2 h-[500px] w-[500px]
-        -translate-x-1/2 rounded-full bg-[#FF6B35]/20 blur-[120px] -z-20"
-      />
+  {/* Main orange glow */}
+  <motion.div
+    animate={{
+      x: [-20, 20, -20],
+      y: [-10, 10, -10],
+    }}
+    transition={{
+      duration: 15,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    }}
+    className="absolute left-1/2 top-0 h-[400px] w-[400px]
+    -translate-x-1/2 rounded-full
+    bg-[#FF6B35]/20 blur-[120px]"
+  />
 
-      {/* Secondary Glow */}
-      <motion.div
-        animate={{
-          x: [20, -20, 20],
-          y: [10, -10, 10],
-        }}
-        transition={{
-          duration: 16,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-        className="absolute bottom-0 right-0 h-[400px] w-[400px]
-        rounded-full bg-orange-500/10 blur-[100px] -z-20"
-      />
+  {/* Bottom glow */}
+  <div
+    className="absolute bottom-0 right-0 h-[350px] w-[350px]
+    rounded-full bg-orange-500/10 blur-[100px]"
+  />
 
-      {/* Grid */}
-      <div
-        className="absolute inset-0 opacity-[0.04] -z-10"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,107,53,0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(255,107,53,0.3) 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
-        }}
-      />
-
+  {/* Grid */}
+  <div
+    className="absolute inset-0 opacity-[0.05]"
+    style={{
+      backgroundImage:
+        'linear-gradient(rgba(255,107,53,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,107,53,0.2) 1px, transparent 1px)',
+      backgroundSize: '50px 50px',
+    }}
+  />
+</div>
       {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-6 text-center">
         <motion.div
