@@ -49,7 +49,7 @@ export default function Hero() {
           ease: 'easeInOut',
         }}
         className="absolute -top-40 left-1/2 h-[500px] w-[500px]
-        -translate-x-1/2 rounded-full bg-[#FF6B35]/20 blur-[180px] -z-20"
+        -translate-x-1/2 rounded-full bg-[#FF6B35]/20 blur-[120px] -z-20"
       />
 
       {/* Secondary Glow */}
@@ -64,7 +64,7 @@ export default function Hero() {
           ease: 'easeInOut',
         }}
         className="absolute bottom-0 right-0 h-[400px] w-[400px]
-        rounded-full bg-orange-500/10 blur-[160px] -z-20"
+        rounded-full bg-orange-500/10 blur-[100px] -z-20"
       />
 
       {/* Grid */}
@@ -76,28 +76,6 @@ export default function Hero() {
           backgroundSize: '50px 50px',
         }}
       />
-
-      {/* Particles */}
-      <div className="absolute inset-0 overflow-hidden -z-10">
-        {[...Array(25)].map((_, i) => (
-          <motion.div
-            key={i}
-            animate={{
-              y: [-20, 20, -20],
-              opacity: [0.2, 0.8, 0.2],
-            }}
-            transition={{
-              duration: 4 + Math.random() * 4,
-              repeat: Infinity,
-            }}
-            className="absolute h-1 w-1 rounded-full bg-[#FF6B35]/60"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
-      </div>
 
       {/* Content */}
       <div className="relative z-20 max-w-7xl mx-auto px-6 text-center">

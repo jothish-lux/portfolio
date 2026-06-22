@@ -6,9 +6,8 @@ import Lenis from 'lenis';
 function App() {
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      smoothWheel: true,
-    });
+  duration: 1,
+});
 
     function raf(time: number) {
       lenis.raf(time);
