@@ -115,7 +115,7 @@ const Contact = () => {
               <h4 className="text-lg font-semibold text-white mb-4">Follow Me</h4>
               <div className="flex gap-4">
                 <a
-                  href="https://www.linkedin.com/in/jyothish-kumar-330aaa394"
+                  href="https://www.linkedin.com/in/jyothishkumar-aruparathara-suresh-330aaa394/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-12 h-12 flex items-center justify-center bg-slate-800 rounded-lg border border-slate-700 hover:border-orange-500 hover:bg-orange-500 transition-all group"
