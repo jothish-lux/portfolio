@@ -17,12 +17,15 @@ const Contact = () => {
     setSubmitStatus('idle');
 
     try {
-      const supabaseUrl = import.meta.env.VITE_PUBLIC_SUPABASE_URL;
-      
-      const response = await fetch(`${supabaseUrl}/functions/v1/send-contact-email`, {
+      const scriptUrl = import.meta.env.VITE_GOOGLE_SCRIPT_URL;
+
+      // Use text/plain to avoid triggering a CORS preflight (OPTIONS),
+      // which Apps Script web apps don't handle. The script still parses
+      // the body as JSON on its end.
+      const response = await fetch(scriptUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'text/plain;charset=utf-8',
         },
         body: JSON.stringify(formData)
       });
